@@ -52,7 +52,7 @@
             <?php if (session()->get('logged_in') == true &&  session()->get('level') == 0) { ?>
                 <a href="<?= base_url('/paketku') ?>" class="nav-item nav-link">
                     <i class="bi bi-cart4 position-relative fs-5 p-0">
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;"><?= $jumlah ?><span class="visually-hidden">unread messages</span>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;"></?= $jumlah ?><span class="visually-hidden">unread messages</span>
                         </span>
                     </i>
                 </a>
