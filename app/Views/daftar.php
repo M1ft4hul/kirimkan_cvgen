@@ -105,7 +105,7 @@
                 <!--    </?php } ?>-->
                 <!--</div>-->
             </div>
-            <h4 class="m-0 pe-lg-5 d-none d-lg-block"><a href="whatsapp://send?text=Salam Admin saya butuh bantuan, apakah ada waktu untuk konsultasi?.&phone=+6285298649951&abid=+6285298649951"><i class="fa fa-headphones text-primary me-3"></i>+62-85298649951</a></h4>
+            <h7 class="m-0 pe-lg-5 d-none d-lg-block"><a href="whatsapp://send?text=Salam Admin saya butuh bantuan, apakah ada waktu untuk konsultasi?.&phone=+6285298649951&abid=+6285298649951"><i class="fa fa-headphones text-primary me-3"></i>+62-85298649951</a></h7>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -216,15 +216,17 @@
                     <h4 class="text-light mb-4">Alamat</h4>
                     <!--<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Perkantoran Buncit Mas, Jl. Mampang Prpt. Raya No.CC8, RT.1/RW.1, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12760</p>-->
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Hillinstraße 36, Trier, 54296, Germany</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62-85298649951</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62-85397802428</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>sinta@kirimkan.id</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Links</h4>
-                    <a class="btn btn-link" href="">Tentang Kami</a>
-                    <a class="btn btn-link" href="">Layanan</a>
-                    <a class="btn btn-link" href="">Syarat & Ketentuan</a>
+                    <a class="btn btn-link" href="#jerin">Jerman-Indonesia</a>
+                    <a class="btn btn-link" href="#injer">Indonesia-Jerman</a>
+                    <a class="btn btn-link" href="<?= base_url() ?>/terms">Syarat & Ketentuan</a>
                     <a class="btn btn-link" href="https://api.whatsapp.com/send/?phone=6285397802428&text=Hi+kirimkan.id&type=phone_number&app_absent=0">Bantuan</a>
+                    <a class="btn btn-link" href="<?php echo base_url('/privacy') ?>">Privacy policy</a>
+                    <a class="btn btn-link" href="<?php echo base_url('/imprint') ?>">Imprint</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Media Sosial</h4>
@@ -247,12 +249,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="https://www.kirimkan.id/">www.kirimkan.id</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> -->
-                        <!-- </br>Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
+                        &copy; <a class="border-bottom" href="https://www.kirimkan.id/">www.kirimkan.id</a> - All Right Reserved.
                     </div>
                 </div>
             </div>

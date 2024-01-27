@@ -19,6 +19,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
 
     <!-- Libraries Stylesheet -->
     <link href="<?= base_url() ?>/lib/animate/animate.min.css" rel="stylesheet">
@@ -29,21 +30,9 @@
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url() ?>/css/style.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <style>
-        .swal2-styled.swal2-confirm {
-            border: 0;
-            border-radius: 0.25em;
-            background: initial;
-            background-color: #cc3234;
-            color: #fff;
-            font-size: 1em;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="swal" data-swal="<?= session()->get('pesan'); ?>"></div>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -53,23 +42,52 @@
     <!-- Spinner End -->
 
 
+
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
         <a href="<?= base_url() ?>/" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
             <h2 class="mb-2 text-white">Kirimkan.id</h2>
         </a>
+        <div class="d-block d-lg-none d-xl-none ms-auto">
+            <?php if (session()->get('logged_in') == true &&  session()->get('level') == 0) { ?>
+                <a href="<?= base_url('/paketku') ?>" class="nav-item nav-link">
+                    <i class="bi bi-cart4 position-relative fs-5 p-0">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;"><?= $jumlah ?><span class="visually-hidden">unread messages</span>
+                        </span>
+                    </i>
+                </a>
+            <?php } else { ?>
+                <a href="<?= base_url('/login') ?>" class="nav-item nav-link">
+                    <i class="bi bi-cart4 position-relative"></i>
+                </a>
+            <?php } ?>
+        </div>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="<?= base_url('/') ?>" class="nav-item nav-link active">Home</a>
-                <a href="<?= base_url('/profil-member') ?>" class="nav-item nav-link">Profil</a>
-                <a href="<?= base_url('/paketku') ?>" class="nav-item nav-link">Paketku</a>
-                <a href="<?= base_url('/kirim') ?>" class="nav-item nav-link">Kirim Paket</a>
-                <a href="<?= base_url('/logout') ?>" class="nav-item nav-link">Keluar</a>
+                <a href="<?= base_url('/#jerin') ?>" class="nav-item nav-link">Jerman ke Indonesia</a>
+                <a href="<?= base_url('/#injer') ?>" class="nav-item nav-link">Indonesia ke Jerman</a>
+                <a href="<?php echo base_url('/PageJadwal') ?>" class="nav-item nav-link">Jadwal</a>
+                <a href="<?= base_url('/#panduan') ?>" class="nav-item nav-link">FAQ</a>
+                <!-- <div class="d-none d-lg-block d-xl-block ms-auto">
+                    </?php if (session()->get('logged_in') == true &&  session()->get('level') == 0) { ?>
+                        <a href="</?= base_url('/paketku') ?>" class="nav-item nav-link">
+                            <i class="bi bi-cart4 position-relative fs-5 p-0">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 10px;"></?= $jumlah ?><span class="visually-hidden">unread messages</span>
+                                </span>
+                            </i>
+                        </a>
+                    </?php } else { ?>
+                        <a href="</?= base_url('/login') ?>" class="nav-item nav-link">
+                            <i class="bi bi-cart4 position-relative"></i>
+                        </a>
+                    </?php } ?>
+                </div> -->
             </div>
-            <h4 class="m-0 pe-lg-5 d-none d-lg-block"><a href="whatsapp://send?text=Salam Admin saya butuh bantuan, apakah ada waktu untuk konsultasi?.&phone=+6285298649951&abid=+6285298649951"><i class="fa fa-headphones text-primary me-3"></i>+62-85298649951</a></h4>
+            <h7 class="m-0 pe-lg-5 d-none d-lg-block"><a href="whatsapp://send?text=Salam Admin saya butuh bantuan, apakah ada waktu untuk konsultasi?.&phone=+6285298649951&abid=+6285298649951"><i class="fa fa-headphones text-primary me-3"></i>+62-85298649951</a></h7>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -77,77 +95,82 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5" style="margin-bottom: 6rem">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Kirim Paket</h1>
-            <a href="<?= base_url() ?>/kejerman" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft mt-2">Kirim ke Jerman</a>
-            <a href="<?= base_url() ?>/keindonesia" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight mt-2">Kirim ke Indonesia</a>
-
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Privacy Policy</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a class="text-white" href="<?= base_url('/') ?>">Home</a>
+                    </li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">
+                        Privacy Policy
+                    </li>
+                </ol>
+            </nav>
         </div>
     </div>
-    <!-- Page Header End -->
+    <!-- Carousel End -->
 
-    <!-- About Start -->
-    <div class="container-xxl ">
-        <div class="container ">
-            <div class="row g-5 wow fadeIn" data-wow-delay="0.1s">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                    <h1>KETENTUAN KIRIM PAKET</h1>
-                </div>
-                <div class="container featurepx-lg-0">
-                    <div class="row g-5 mx-lg-0">
-                        <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                            <h3 class="mb-2">Dari Jerman ke Indonesia</h3>
-                            <p>Dengan langkah mudah ini: </p>
-                            <div class="d-flex mb-1 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                                <ol>
-                                    <li>Bungkus rapi.</li>
-                                    <li>Kirim ke alamat admin di Jerman</li>
-                                    <li>Penerima menerima di Indonesia Alamat admin Jerman:</li>
-                                    <li>Catatan:<br>
-                                        Cantumkan di secarik kertas dalam paket alamat penerima di Indonesia<br>
-                                        <strong>Ada pertanyaan?</strong><br>
-                                        WA CS: +6285298649951
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="d-flex flex-column mb-4">
-                                <span class="fw-bold fs-6">Penerima: Sinta Alfatah (Jerman)</span>
-                                <span class="fw-bold fs-6">Alamat: Hillinstraße 36 Trier, 54296 Germany</span>
-                                <span class="fw-bold fs-6">HP: 085298649951</span>
-                            </div>
+    <!-- layanan -->
+    <div class="container-xxl" id="layanan">
+        <div class="container">
+            <div class="row g-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center">
+                        <div class="ps-4">
+                            <h2><strong>Privacy Policy</strong></h2>
 
-                            <a href="<?= base_url() ?>/keindonesia" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight ">Kirim ke Indonesia</a>
+                            <p>At Kirimkan id, accessible from <a href="https://kirimkan.id/">https://kirimkan.id/</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Kirimkan id and how we use it.</p>
+                            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
+
+                            <h2><strong>Log Files</strong></h2>
+
+                            <p>Kirimkan id follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information. Our Privacy Policy was created with the help of the <a href="https://www.privacypolicyonline.com/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
+
+                            <h2><strong>Cookies and Web Beacons</strong></h2>
+
+                            <p>Like any other website, Kirimkan id uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+
+                            <p>For more general information on cookies, please read <a href="https://www.privacypolicyonline.com/what-are-cookies/">the "Cookies" article from the Privacy Policy Generator</a>.</p>
+
+                            <h2><strong>Privacy Policies</strong></h2>
+
+                            <P>You may consult this list to find the Privacy Policy for each of the advertising partners of Kirimkan id.</p>
+
+                            <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Kirimkan id, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
+
+                            <p>Note that Kirimkan id has no access to or control over these cookies that are used by third-party advertisers.</p>
+
+                            <h2><strong>Third Party Privacy Policies</strong></h2>
+
+                            <p>Kirimkan id's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. </p>
+
+                            <p>You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</p>
+
+                            <h2><strong>Children's Information</strong></h2>
+
+                            <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+
+                            <p>Kirimkan id does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+                            <h2><strong>Online Privacy Policy Only</strong></h2>
+
+                            <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Kirimkan id. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+
+                            <h2><strong>Consent</strong></h2>
+
+                            <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
                         </div>
-
-
-                        <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                            <h3 class="mb-2">Dari Indonesia ke Jerman</h3>
-                            <p>Dengan langkah mudah ini: </p>
-                            <div class="d-flex mb-1 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                                <ol>
-                                    <li>Bungkus rapi</li>
-                                    <li>Kirim ke alamat admin di Indonesia</li>
-                                    <li>Penerima menerima di Jerman.</li>
-                                    <li>Catatan:<br>
-                                        Cantumkan di secarik kertas dalam paket alamat penerima di Jerman
-                                        <br><strong>Ada pertanyaan?</strong><br>WA CS: +6285298649951
-                                    </li>
-                                </ol>
-                            </div>
-                            <div class="d-flex flex-column mb-4">
-                                <span class="fw-bold fs-6">Penerima: Ibnu Alfatah (Indonesia)</span>
-                                <span class="fw-bold fs-6">Alamat: Perkantoran Buncit Mas, Jl. Mampang Prpt. Raya No.CC8, RT.1/RW.1, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12760</span>
-                                <span class="fw-bold fs-6">HP: 081235235857</span>
-                            </div>
-                            <a href="<?= base_url() ?>/kejerman" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft ">Kirim ke Jerman</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Fact End -->
 
-    <!-- About End -->
+
+
+
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
         <div class="container py-5">
             <div class="row g-5">
@@ -194,6 +217,9 @@
             </div>
         </div>
     </div>
+    <!-- Footer End -->
+
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -206,18 +232,9 @@
     <script src="<?= base_url() ?>/lib/waypoints/waypoints.min.js"></script>
     <script src="<?= base_url() ?>/lib/counterup/counterup.min.js"></script>
     <script src="<?= base_url() ?>/lib/owlcarousel/owl.carousel.min.js"></script>
+
     <!-- Template Javascript -->
     <script src="<?= base_url() ?>/js/main.js"></script>
-    <script src="<?= base_url() ?>/js/pesan.js"></script>
-    <script>
-        $(function() {
-            $("#show_eye").click(function() {
-                $(this).toggleClass("bi bi-eye-slash-fill");
-                var type = $(this).hasClass("bi-eye-slash-fill") ? "text" : "password";
-                $("#password").attr("type", type);
-            });
-        });
-    </script>
 </body>
 
 </html>

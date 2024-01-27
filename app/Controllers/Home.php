@@ -10,11 +10,19 @@ class Home extends BaseController
     {
         $this->JastipM = new JastipM();
     }
-    
+
     public function index()
     {
         $cek['jumlah'] = $this->KirimanM->where(['id_user' => session()->get('id'), 'status !=' => 6])->countAllResults();
         return view('index', $cek);
+    }
+    public function privacy()
+    {
+        return view('privacy');
+    }
+    public function imprint()
+    {
+        return view('imprint');
     }
     // new
     public function jadwal()

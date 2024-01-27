@@ -208,7 +208,7 @@
                     </div>
 
 
-                   <a href="https://api.whatsapp.com/send/?phone=6285397802428&text=Hi+kirimkan.id,+Jerman+ke+Indonesia+&type=phone_number&app_absent=0" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
+                    <a href="https://api.whatsapp.com/send/?phone=6285397802428&text=Hi+kirimkan.id,+Jerman+ke+Indonesia+&type=phone_number&app_absent=0" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
 
                     <!-- </?php if (session()->get('logged_in') == true &&  session()->get('level') == 0) { ?>
                         <a href="</?= base_url() ?>/kirim" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
@@ -254,8 +254,8 @@
                         <span class="fw-bold fs-6">HP: 6281235235857</span>
                         <!--<span class="fw-bold fs-6">HP: 6285397802428</span>-->
                     </div>
-                    
-                   <a href="https://api.whatsapp.com/send/?phone=6285397802428&text=Hi+kirimkan.id,+Indonesia+ke+Jerman+&type=phone_number&app_absent=0" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
+
+                    <a href="https://api.whatsapp.com/send/?phone=6285397802428&text=Hi+kirimkan.id,+Indonesia+ke+Jerman+&type=phone_number&app_absent=0" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
 
                     <!-- </?php if (session()->get('logged_in') == true &&  session()->get('level') == 0) { ?>
                         <a href="</?= base_url() ?>/kirim" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
@@ -265,7 +265,7 @@
                         <a href="</?= base_url() ?>/login" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>
                         <a href="https://api.whatsapp.com/send/?phone=6285298649951&text=Jastip+kirimkan+Tgl........&type=phone_numb er&app_absent=0" target="_blank" class="btn btn-success py-md-3 px-md-5 me-3 animated slideInLeft">Hubungi Admin</a>
                     </?php } ?> -->
-                    
+
                     <!--<a href="https://api.whatsapp.com/send/?phone=6285298649951&text=Jastip+Indo+Jerman+Tgl........&type=phone_number&app_absent=0" target="_blank" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Kirim Paket</a>-->
 
                 </div>
@@ -302,7 +302,7 @@
                         <!--</li>-->
                         <li>Bagaimana caranya menghindari penipuan yang mengatasnamakan kirimkan.id? <br>
                             <span class="fw-bold">Pastikan melakukan pembayaran hanya ke rekening atas nama PT.KIRIMKAN JASTIP INDONESIA baik rekening RUPIAH maupun rekening EURO</span>
-                        </li>                        <!--<li class="list-group-item">-->
+                        </li> <!--<li class="list-group-item">-->
                         <!--    <div class="row gy-4">-->
                         <!--        <div class="col-lg-6">-->
                         <!--            <ul class="list-group">-->
@@ -377,6 +377,8 @@
                     <a class="btn btn-link" href="#injer">Indonesia-Jerman</a>
                     <a class="btn btn-link" href="<?= base_url() ?>/terms">Syarat & Ketentuan</a>
                     <a class="btn btn-link" href="https://api.whatsapp.com/send/?phone=6285397802428&text=Hi+kirimkan.id&type=phone_number&app_absent=0">Bantuan</a>
+                    <a class="btn btn-link" href="<?php echo base_url('/privacy') ?>">Privacy policy</a>
+                    <a class="btn btn-link" href="<?php echo base_url('/imprint') ?>">Imprint</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Media Sosial</h4>
